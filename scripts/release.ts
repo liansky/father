@@ -35,17 +35,17 @@ const noNextTagPkgs = ['boilerplate'];
   // check npm ownership
   logger.event('check npm ownership');
   const whoami = (await $`npm whoami`).stdout.trim();
-  await Promise.all(
-    ['father', 'create-father'].map(async (pkg) => {
-      const owners = (await $`npm owner ls ${pkg}`).stdout
-        .trim()
-        .split('\n')
-        .map((line) => {
-          return line.split(' ')[0];
-        });
-      assert(owners.includes(whoami), `${pkg} is not owned by ${whoami}`);
-    }),
-  );
+  // await Promise.all(
+  //   ['father', 'create-father'].map(async (pkg) => {
+  //     const owners = (await $`npm owner ls ${pkg}`).stdout
+  //       .trim()
+  //       .split('\n')
+  //       .map((line) => {
+  //         return line.split(' ')[0];
+  //       });
+  //     assert(owners.includes(whoami), `${pkg} is not owned by ${whoami}`);
+  //   }),
+  // );
 
   // clean
   logger.event('clean');
