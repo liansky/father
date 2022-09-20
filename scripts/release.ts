@@ -27,10 +27,10 @@ const noNextTagPkgs = ['boilerplate'];
   // check npm registry
   logger.event('check npm registry');
   const registry = (await $`npm config get registry`).stdout.trim();
-  assert(
-    registry === 'https://registry.npmjs.org/',
-    'npm registry is not https://registry.npmjs.org/',
-  );
+  // assert(
+  //   registry === 'https://registry.npmjs.org/',
+  //   'npm registry is not https://registry.npmjs.org/',
+  // );
 
   // check npm ownership
   logger.event('check npm ownership');
